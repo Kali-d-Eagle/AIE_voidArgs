@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Function Guide</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #e0f7fa, #e3f2fd); 
+      color: #000000;
+      margin: 0;
+      padding: 0;
+    }
+    body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::before {
+  /* background: url('./cloud4.png') bottom center/cover no-repeat; */
+  /* background: url('./cloud2.png') center center no-repeat; */
+  background: url('./temp2.jpg') center no-repeat;
+
+  opacity: 1;
+}
+
+
+body::after {
+  background: url('./tempPink.jpg') top center/contain no-repeat;
+  opacity: 1;
+}
+
+
+
+    header {
+      position: relative;
+      background: url('./reqMyEagle.jpg') center/cover no-repeat;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      /* background: linear-gradient(to bottom right, rgba(0, 64, 128, 0.6), rgba(0, 64, 128, 0.4)); */
+      background: linear-gradient(to bottom right, rgba(229, 229, 253, 0.7), rgba(240, 98, 217, 0.548));
+      backdrop-filter: blur(40px);
+      transition: opacity 0.4 ease;
+      z-index: 1;
+    }
+
+    header:hover::before{
+      opacity: 0;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow:
+          0 0 8px #ffffffaa,
+          0 0 12px #00bfff,
+          0 0 24px #1e90ff;
+      }
+      to {
+        text-shadow:
+          0 0 16px #ffffff,
+          0 0 22px #00e0ff,
+          0 0 40px #1ec8ff;
+      }
+    }
+/*
+
+/*
+@keyframes glow {
+  from {
+    text-shadow:
+      0 0 8px #ffffffaa,
+      0 0 12px #ff69b4,
+      0 0 24px #ff1493;
+  }
+  to {
+    text-shadow:
+      0 0 16px #ffffff,
+      0 0 22px #ff66cc,
+      0 0 40px #ff1493;
+  }
+}
+  */
+
+  header h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 3rem;
+    color: #ffe6f7;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow:
+      0 0 8px #ff69b4,
+      0 0 12px #ff69b4,
+      0 0 18px #ff1493;
+    animation: glow 2.5s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from {
+      text-shadow:
+        0 0 4px #ff69b4,
+        0 0 6px #ff69b4,
+        0 0 10px #ff1493;
+    }
+    to {
+      text-shadow:
+        0 0 12px #ff69b4,
+        0 0 20px #ff69b4,
+        0 0 35px #ff1493,
+        0 0 50px #ff1493;
+    }
+  }
+  
+  
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 40px 30px;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      z-index: 1;
+      position: relative;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2, h3 {
+      color: #1e88e5;
+    }
+
+    ul {
+      padding-left: 25px;
+    }
+
+    pre {
+      background-color: #f4faff;
+      border-left: 5px solid #3498db;
+      padding: 18px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+      font-size: 15px;
+    }
+
+    .highlight, .note, .warning {
+      border-radius: 12px;
+      padding: 18px 24px;
+      margin: 20px 0;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      background-color: #e9f4ff;
+      border-left: 5px solid #5dade2;
+    }
+
+    .note {
+      background-color: #eafaf1;
+      border-left: 5px solid #27ae60;
+    }
+
+    .warning {
+      background-color: #fff0f3;
+      border-left: 5px solid #e74c3c;
+    }
+
+    a {
+      color: #1e88e5;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: #1565c0;
+      text-decoration: underline;
+    }
+
+    footer {
+      background: linear-gradient(to right, #1e88e5, #1565c0);
+      color: #ffffff;
+      text-align: center;
+      padding: 24px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      border-top: 3px solid #0d47a1;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      position: relative;
+    }
+
+    code {
+      background-color: #f0f8ff;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 90%;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    p {
+      line-height: 1.8;
+    }
+
+    .tooltip {
+      position: relative;
+      cursor: help;
+    }
+    
+    .tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ff00d9;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 7px;
+      white-space: nowrap;
+      font-size: 14px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.7s ease-in-out;
+      z-index: 130;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    }
+    
+    .tooltip:hover::after {
+      opacity: 0.4;
+    }
+    
+    
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>AESTHETIC INSTITUTION OF EAGLES</h1>
+  
+  
+</header>
+
+<div class="container">
+  <!-- Your content remains unchanged (already excellent!) -->
+  <!-- All sections: #intro, #void-noargs etc. stay same -->
+  <!-- Just plug in your earlier <section> elements here -->
+
+    <section id="void-args">
+        <h2>🔹 2. Void <span class="tooltip" data-tooltip="Function" >F<sup>n</sup></span> (Wid <span class="tooltip" data-tooltip="Arguments">Args</span>)</h2>
+        <p>
+          Yeh <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> b kaafi simple hota h, lekin ye <strong>input leta h</strong>.<br>
+          "Void" ka <span class="tooltip" data-tooltip="matlab">mtb</span> h: <em>kuch b return nhi krega</em>, lekin <strong><span class="tooltip" data-tooltip="arguments">args</span></strong> diye jayenge.<br>
+          <span class="tooltip" data-tooltip="matlab">mtb</span>, <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> ko kuch values pass karni hoti h, pr vo values ko process karke result nhi dega — bs apna kaam karega.
+        </p>
+    
+        <div class="highlight">
+            <strong>💡 Real-Life Analogy :</strong><br>
+            Sochiye ek chef (function) h jise biryani banane k liye bola gaya h.<br><br>
+    
+            👨‍🍳 Chef ko ingredients (<span class="tooltip" data-tooltip="input">i/p</span>) diye jate h — masale, chawal, chicken, etc!<br>
+            💭 Chef ingredients ko mix karega, pr final dish (<span class="tooltip" data-tooltip="output">o/p</span>) aapko return nhi karega — bs uska kaam complete hoga.<br><br>
+    
+            Yahi hota h <strong>void <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> wid <span class="tooltip" data-tooltip="arguments">args</span></strong>:
+            <ul>
+              <li>👨‍🍳 Chef = <span class="tooltip" data-tooltip="function">f<sup>n</sup></span></li>
+              <li>🍚 Ingredients = <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> <span class="tooltip" data-tooltip="arguments">args</span> (<span class="tooltip" data-tooltip="input">i/p</span>)</li>
+              <li>❌ Final dish = <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> return value (nt returned)</li>
+              <li>✅ Biryani bn gyi (kaam complete!)</li>
+            </ul>
+        </div>
+    
+        <h3>🔧 Syntax (Structure)</h3>
+        <pre><code>
+void functionName(dataType arg1, dataType arg2) {
+     // Yeh block un arguments ke saath kaam karega
+}</code></pre>
+    
+        <p><strong>Breakdown:</strong></p>
+        <ul>
+          <li><code>void</code>: <span class="tooltip" data-tooltip="Function">F<sup>n</sup></span> kuch return nhi karega</li>
+          <li><code>functionName()</code>: <span class="tooltip" data-tooltip="Function">F<sup>n</sup></span> ka naam + brackets <span class="tooltip" data-tooltip="mein">m</span> <span class="tooltip" data-tooltip="arguments">args</span> (<span class="tooltip" data-tooltip="input">i/p</span>)</li>
+          <li><code>{ }</code>: <span class="tooltip" data-tooltip="Functio ">F<sup>n</sup></span> ka kaam yha likha jata h, jo given <span class="tooltip" data-tooltip="arguments">args</span> k saath perform hoga</li>
+        </ul>
+    
+        <div class="note">
+          <strong>Use Kab Karein?</strong><br>
+          Jab aapko kisi <span class="tooltip" data-tooltip="input">i/p</span> ki zarurat ho, lekin aapko uska koi <span class="tooltip" data-tooltip="output">o/p</span> ya result return nhi karna ho!
+        </div>
+    
+        <h3>✅ <span class="tooltip" data-tooltip="Example">eg</span> 1: Display a Custom <span class="tooltip" data-tooltip="Message">Msg</span></h3>
+        <pre><code>
+void showCustomMessage(string name) {
+    cout << "Hello, " << name << "!" << endl;
+}</code></pre>
+        <p><strong>Explanation:</strong> Yeh <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> ek naam lega aur usk liye personalized greeting dikhayega. Koi result return nhi karega, bs screen pe <span class="tooltip" data-tooltip="message">msg</span> dikhayega!</p>
+    
+        <h3>✅ <span class="tooltip" data-tooltip="Example">eg</span> 2: Print a Custom Line of Stars</h3>
+        <pre><code>
+void printCustomStars(int count) {
+     for (int i = 0; i < count; i++) {
+        cout << "*";
+     }
+     cout << endl;
+}</code></pre>
+        <p><strong>Explanation:</strong> Yeh <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> <span class="tooltip" data-tooltip="number">num</span> of stars print krega. <span class="tooltip" data-tooltip="input">i/p</span> ke roop <span class="tooltip" data-tooltip="mein">m</span> aapko <span class="tooltip" data-tooltip="number">num</span> of stars pass krna hoga!</p>
+    
+        <h3>✅ <span class="tooltip" data-tooltip="Example">eg</span> 3: Display User Info</h3>
+        <pre><code>
+void displayUserInfo(string username, int age) {
+     cout << "Username: " << username << ", Age: " << age << endl;
+}</code></pre>
+        <p><strong>Explanation:</strong> Ye <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> user ka naam aur age dikhayega. <span class="tooltip" data-tooltip="Function">F<sup>n</sup></span> ko yeh information <span class="tooltip" data-tooltip="arguments">args</span> ke roop <span class="tooltip" data-tooltip="mein">m</span> milegi.</p>
+    
+        <h3>💡 Kaise Use Karte H?</h3>
+        <pre><code>
+int main() {
+    string name = "Ravi";
+    int userAge = 25;
+    
+    showCustomMessage(name);  // <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> call wid argument
+    printCustomStars(10);     // <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> call wid argument
+    displayUserInfo(name, userAge); // <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> call wid multiple <span class="tooltip" data-tooltip="arguments">args</span>
+          
+    return 0;
+}</code></pre>
+
+        <p><strong>Explanation:</strong> <span class="tooltip" data-tooltip="Function">F<sup>n</sup></span> call karte wqt <span class="tooltip" data-tooltip="arguments">args</span> b pass kiye jaate h jo <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> ke andar use hote h.</p>
+    
+        <div class="warning">
+          ⚠️ <strong>Common Mistakes:</strong>
+          <ul>
+            <li><span class="tooltip" data-tooltip="arguments">args</span> ke type ko miss karna (e.g., string ko int type <span class="tooltip" data-tooltip="mein">m</span> pass karna)</li>
+            <li><span class="tooltip" data-tooltip="Function">F<sup>n</sup></span> call karte wqt <span class="tooltip" data-tooltip="arguments">args</span> na dena (❌ <code>showCustomMessage();</code>)</li>
+            <li><span class="tooltip" data-tooltip="Function">F<sup>n</sup></span> ko <span class="tooltip" data-tooltip="define">def<sup>n</sup></span> krte wqt argument ka type ya number glt dena</li>
+          </ul>
+        </div>
+    
+        <h3>🧠 Short Summary</h3>
+        <ul>
+          <li><strong><span class="tooltip" data-tooltip="Input">I/p</span> ki zarurat hoti h</strong> – <span class="tooltip" data-tooltip="arguments">args</span> pass karne pdte h</li>
+          <br>
+          <li><strong>No <span class="tooltip" data-tooltip="output">o/p</span></strong> – <span class="tooltip" data-tooltip="function">f<sup>n</sup></span> koi <span class="tooltip" data-tooltip="result">res</span> return nhi krta</li>
+          <br>
+          <li>Mostly <strong>custom tasks ke liye</strong> use hota h jha <span class="tooltip" data-tooltip="input">i/p</span> ki zarurat ho</li>
+          <br>
+          <li><strong>Easy to create, perfect fr handling specific tasks with inputs!</strong></li>
+        </ul>
+    
+    </section>
+    
+    
+
+</div>
+
+<footer>
+  A PPG! Course from ur Sarrr on Functions
+</footer>
+</body>
+</html>
+
